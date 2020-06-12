@@ -1,0 +1,53 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: cassandra
+  name: cassandra-data-1
+  labels:
+    type: local
+    app: cassandra
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data
+ 
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: cassandra-demo
+  name: cassandra-data-2
+  labels:
+    type: local
+    app: cassandra
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data
+ 
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: cassandra-demo
+  name: cassandra-data-3
+  labels:
+    type: local
+    app: cassandra
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data
